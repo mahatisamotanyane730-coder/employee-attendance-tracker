@@ -113,6 +113,34 @@ app.get('/test-attendance', async (req, res) => {
     });
   }
 });
+app.get('/favicon.ico', (req, res) => {
+  res.status(204).end();
+});
+// Root route - Welcome page
+app.get('/', (req, res) => {
+  res.json({
+    message: '🚀 Employee Attendance Tracker API',
+    version: '1.0.0',
+    status: 'Running',
+    environment: process.env.NODE_ENV || 'development',
+    timestamp: new Date().toISOString(),
+    endpoints: {
+      documentation: '/api-docs',
+      health: '/health',
+      database_test: '/test-db',
+      api: {
+        base: '/api',
+        mark_attendance: 'POST /api/attendance',
+        get_attendance: 'GET /api/attendance',
+        delete_attendance: 'DELETE /api/attendance/:id',
+        search_attendance: 'GET /api/attendance/search?query=',
+        filter_attendance: 'GET /api/attendance/filter?date='
+      }
+    },
+    frontend: 'https://your-frontend-url.com (update when deployed)',
+    repository: 'https://github.com/your-username/employee-attendance-tracker'
+  });
+});
 
 // API documentation route
 app.get('/api-docs', (req, res) => {

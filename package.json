@@ -1,0 +1,15 @@
+{
+  "name": "employee-attendance-tracker",
+  "version": "1.0.0",
+  "description": "Full-stack Employee Attendance Tracker",
+  "scripts": {
+    "install-frontend": "cd frontend && npm install",
+    "build-frontend": "cd frontend && npm run build",
+    "start-frontend": "cd frontend && npm start",
+    "install-backend": "cd backend && npm install",
+    "start-backend": "cd backend && npm start"
+  },
+  "keywords": ["react", "nodejs", "mysql", "attendance"],
+  "author": "Your Name",
+  "license": "MIT"
+}
